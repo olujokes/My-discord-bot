@@ -120,5 +120,49 @@ async def welcome(ctx):
         inline=False
     )
     embed.set_footer(text="HOUSE OF SENATE EVENTS 🏆")
+    await ctx.send(embed=embed) 
+@bot.command()
+async def rules(ctx):
+    embed = discord.Embed(
+        title="📜 HOUSE OF SENATE EVENTS — OFFICIAL TOURNAMENT RULES",
+        description="Welcome to the official CODM Battle Royale competition.",
+        color=0xFFD700
+    )
+    embed.add_field(
+        name="1. TEAM REGISTRATION",
+        value="• Each team can register a maximum of 6 players.\n• Only 4 players can participate in each match.\n• The captain chooses the 4 active players.\n• The remaining 2 players can act as substitutes.\n• Only registered players are eligible to compete.",
+        inline=False
+    )
+    embed.add_field(
+        name="2. DEVICE VERIFICATION",
+        value="• Every registered player must complete device verification.\n• Players must submit their device make and model.\n• Device serial numbers must be submitted privately to authorised admins.\n• Any device changes must be reported to admins.",
+        inline=False
+    )
+    embed.add_field(
+        name="3. FAIR PLAY & PLUG-INS",
+        value="• Cheating and unauthorised third-party tools are prohibited.\n• No plug-ins, scripts, modifications or game-altering add-ons are permitted.\n• No exploiting game bugs.\n• No teaming with opposing squads.\n• Players must use their registered CODM accounts.",
+        inline=False
+    )
+    embed.add_field(
+        name="4. MATCH RULES",
+        value="• Teams must join their assigned lobbies on time.\n• Players must follow match instructions.\n• Match results must be submitted with evidence.\n• Substitutions require admin approval.",
+        inline=False
+    )
+    embed.add_field(
+        name="5. PLAYER CONDUCT",
+        value="• Respect all players and tournament staff.\n• Harassment and abusive behaviour are not permitted.\n• Follow instructions from authorised admins.",
+        inline=False
+    )
+    embed.add_field(
+        name="6. DISCIPLINARY ACTIONS",
+        value="Violations may result in:\n\n• Official warning.\n• Match disqualification.\n• Tournament suspension.\n• Permanent tournament ban.\n\nPlayers may appeal disciplinary decisions to tournament administration.",
+        inline=False
+    )
+    embed.add_field(
+        name="🏆 PLAY FAIR. RESPECT EVERYONE. COMPETE TO WIN.",
+        value="HOUSE OF SENATE EVENTS",
+        inline=False
+    )
+    embed.set_footer(text="HOUSE OF SENATE EVENTS 🏆")
     await ctx.send(embed=embed)
 bot.run(TOKEN)
