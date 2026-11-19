@@ -32,5 +32,69 @@ async def hello(ctx):
 async def ping(ctx):
     await ctx.send(f"Pong! {round(bot.latency * 1000)}ms")
 
-TOKEN = os.getenv("DISCORD_TOKEN")
+TOKEN = os.getenv("DISCORD_TOKEN") 
+@bot.command()
+async def registration(ctx):
+    embed = discord.Embed(
+        title="🏆 HOUSE OF SENATE EVENTS — OFFICIAL TEAM REGISTRATION",
+        color=0xFFD700  # Gold
+    )
+
+    embed.add_field(
+        name="1. TEAM INFORMATION",
+        value="**Team Name:**\n**Team Manager:**",
+        inline=False
+    )
+
+    embed.add_field(
+        name="2. PLAYER INFORMATION (MAXIMUM 6)",
+        value=(
+            "**Player 1**\n• IGN:\n• CODM UID:\n• Device Model:\n• Device Serial Number:\n• Discord Tag:\n\n"
+            "**Player 2**\n• IGN:\n• CODM UID:\n• Device Model:\n• Device Serial Number:\n• Discord Tag:\n\n"
+            "**Player 3**\n• IGN:\n• CODM UID:\n• Device Model:\n• Device Serial Number:\n• Discord Tag:"
+        ),
+        inline=False
+    )
+
+    embed.add_field(
+        name="‎",
+        value=(
+            "**Player 4**\n• IGN:\n• CODM UID:\n• Device Model:\n• Device Serial Number:\n• Discord Tag:\n\n"
+            "**Player 5**\n• IGN:\n• CODM UID:\n• Device Model:\n• Device Serial Number:\n• Discord Tag:\n\n"
+            "**Player 6**\n• IGN:\n• CODM UID:\n• Device Model:\n• Device Serial Number:\n• Discord Tag:"
+        ),
+        inline=False
+    )
+
+    embed.add_field(
+        name="3. TEAM FORMAT",
+        value=(
+            "• Maximum 6 registered players.\n"
+            "• Only 4 players compete per match.\n"
+            "• The captain chooses the 4 active players.\n"
+            "• The remaining 2 players are substitutes."
+        ),
+        inline=False
+    )
+
+    embed.add_field(
+        name="4. DEVICE VERIFICATION",
+        value=(
+            "• All 6 registered players must complete device verification.\n"
+            "• Device serial numbers must be submitted privately to authorised admins.\n"
+            "• Do not post serial numbers in public channels.\n"
+            "• Device changes must be reported to admins."
+        ),
+        inline=False
+    )
+
+    embed.add_field(
+        name="5. REGISTRATION APPROVAL",
+        value="Your team is officially registered only after approval from tournament administration.",
+        inline=False
+    )
+
+    embed.set_footer(text="🏆 HOUSE OF SENATE EVENTS • PLAY FAIR. RESPECT EVERYONE. COMPETE TO WIN.")
+
+    await ctx.send(embed=embed)
 bot.run(TOKEN)
