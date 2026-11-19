@@ -96,5 +96,29 @@ async def registration(ctx):
 
     embed.set_footer(text="🏆 HOUSE OF SENATE EVENTS • PLAY FAIR. RESPECT EVERYONE. COMPETE TO WIN.")
 
+    await ctx.send(embed=embed) 
+@bot.command()
+async def welcome(ctx):
+    embed = discord.Embed(
+        title="🏆 WELCOME TO HOUSE OF SENATE EVENTS",
+        description="Welcome to the official CODM Battle Royale Tournament!\n\nWe're bringing competitive teams together to compete for the title of champion.",
+        color=0xFFD700
+    )
+    embed.add_field(
+        name="🎮 TOURNAMENT FORMAT",
+        value="🎮 **Game:** Call of Duty Mobile\n🏆 **Mode:** Battle Royale\n👤 **Maximum roster:** 6 players per team\n⚔️ **Active players:** 4 per match",
+        inline=False
+    )
+    embed.add_field(
+        name="📋 BEFORE YOU PARTICIPATE",
+        value="**1.** Read the tournament rules.\n**2.** Complete your team registration.\n**3.** Complete device verification.\n**4.** Wait for admin approval.\n**5.** Check announcements for tournament updates.",
+        inline=False
+    )
+    embed.add_field(
+        name="🍀 Good luck!",
+        value="Good luck to every team!",
+        inline=False
+    )
+    embed.set_footer(text="HOUSE OF SENATE EVENTS 🏆")
     await ctx.send(embed=embed)
 bot.run(TOKEN)
